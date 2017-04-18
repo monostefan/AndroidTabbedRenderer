@@ -134,6 +134,7 @@
     <AndroidResource Include="Resources\drawable\ic_audiotrack_white_24dp.xml" />
     <AndroidResource Include="Resources\drawable\ic_favorite_white_24dp.xml" />
     <AndroidResource Include="Resources\menu\main_menu.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
