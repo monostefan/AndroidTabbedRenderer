@@ -161,10 +161,12 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\TabbarPhotosActive.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\TabbarShare.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\TabbarShareActive.png" />
+    <AndroidResource Include="Resources\values-de\strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
     <Folder Include="Assets\" />
+    <Folder Include="Resources\values-de\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

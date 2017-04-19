@@ -65,6 +65,14 @@ namespace AndroidTabbedRenderer.Droid
                 {
                     bottomNavigationView.InflateMenu(Resource.Menu.photos_menu);
                 }
+                else if (page.AndroidMenu == BottomMenu.Files)
+                {
+                    bottomNavigationView.InflateMenu(Resource.Menu.files_menu);
+                }
+                else if (page.AndroidMenu == BottomMenu.Trash)
+                {
+                    bottomNavigationView.InflateMenu(Resource.Menu.trash_menu);
+                }
             }
         }
 
