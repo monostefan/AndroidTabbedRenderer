@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="BottomTabbedPage.cs" />
     <Compile Include="BottomMenu.cs" />
+    <Compile Include="IBottomTabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
