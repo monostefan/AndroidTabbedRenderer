@@ -6,18 +6,12 @@
         android:id="@+id/action_favorites"
         android:enabled="true"
         android:icon="@drawable/ic_favorite_white_24dp"
-        android:title="@string/text_favorites"
+        android:title="@drawable/TabbarFiles"
 		android:orderInCategory="0" />
     <item
         android:id="@+id/action_schedules"
         android:enabled="true"
         android:icon="@drawable/ic_access_time_white_24dp"
-        android:title="@string/text_schedules"
+        android:title="@drawable/TabbarShare"
 		android:orderInCategory="1" />
-    <item
-        android:id="@+id/action_music"
-        android:enabled="true"
-        android:icon="@drawable/ic_audiotrack_white_24dp"
-        android:title="@string/text_music"
-		android:orderInCategory="2" />
 </menu>

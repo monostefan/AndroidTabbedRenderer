@@ -5,13 +5,13 @@
     <item
         android:id="@+id/action_favorites"
         android:enabled="true"
-        android:icon="@drawable/ic_favorite_white_24dp"
+        android:icon="@drawable/TabbarPhotos"
         android:title="@string/text_favorites"
 		android:orderInCategory="0" />
     <item
         android:id="@+id/action_schedules"
         android:enabled="true"
-        android:icon="@drawable/ic_access_time_white_24dp"
+        android:icon="@drawable/TabbarFiles"
         android:title="@string/text_schedules"
 		android:orderInCategory="1" />
 </menu>
