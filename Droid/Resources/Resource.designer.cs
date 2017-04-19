@@ -3845,14 +3845,20 @@ namespace AndroidTabbedRenderer.Droid
 			// aapt resource value: 0x7f070030
 			public const int status_bar_notification_info_overflow = 2131165232;
 			
-			// aapt resource value: 0x7f07003d
-			public const int text_favorites = 2131165245;
+			// aapt resource value: 0x7f070041
+			public const int text_albums = 2131165249;
 			
 			// aapt resource value: 0x7f07003f
-			public const int text_music = 2131165247;
+			public const int text_files = 2131165247;
 			
 			// aapt resource value: 0x7f07003e
-			public const int text_schedules = 2131165246;
+			public const int text_photos = 2131165246;
+			
+			// aapt resource value: 0x7f070040
+			public const int text_shares = 2131165248;
+			
+			// aapt resource value: 0x7f07003d
+			public const int text_timeline = 2131165245;
 			
 			static String()
 			{

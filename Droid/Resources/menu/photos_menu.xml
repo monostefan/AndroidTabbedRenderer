@@ -6,18 +6,18 @@
         android:id="@+id/action_favorites"
         android:enabled="true"
         android:icon="@drawable/TabbarPhotos"
-        android:title="@string/text_favorites"
+        android:title="@string/text_timeline"
 		android:orderInCategory="0" />
     <item
         android:id="@+id/action_schedules"
         android:enabled="true"
         android:icon="@drawable/TabbarAlbums"
-        android:title="@string/text_schedules"
+        android:title="@string/text_albums"
 		android:orderInCategory="1" />
     <item
         android:id="@+id/action_music"
         android:enabled="true"
         android:icon="@drawable/TabbarShare"
-        android:title="@string/text_music"
+        android:title="@string/text_shares"
 		android:orderInCategory="2" />
 </menu>

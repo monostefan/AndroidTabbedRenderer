@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<string name="text_favorites">Favoriten</string>
-	<string name="text_schedules">Schedules</string>
-	<string name="text_music">Musik</string>
+	<string name="text_timeline">Chronik</string>
+	<string name="text_photos">Fotos</string>
+	<string name="text_files">Dateien</string>
+	<string name="text_shares">Geteilt</string>
+	<string name="text_albums">Alben</string>
 </resources>
