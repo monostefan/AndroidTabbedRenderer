@@ -3,22 +3,26 @@ using System.Collections.Specialized;
 using Android.Support.Design.Widget;
 using Android.Views;
 using Android.Content.Res;
-using Android.Widget;
+using Android.Support.V4.View;
+using Android.Support.V7.View;
 using AndroidTabbedRenderer;
 using AndroidTabbedRenderer.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms.Platform.Android.AppCompat;
 
-using Color = Android.Graphics.Color;
-using RelativeLayout = Android.Widget.RelativeLayout;
 
+using Color = Android.Graphics.Color;
+using Android.Support.V7.View.Menu;
 
 [assembly: ExportRenderer(typeof(BottomTabbedPage), typeof(BottomTabbedPageRenderer))]
 namespace AndroidTabbedRenderer.Droid
 {
-	public class BottomTabbedPageRenderer : TabbedPageRenderer
+	public class BottomTabbedPageRenderer : TabbedPageRenderer, BottomNavigationView.IOnNavigationItemSelectedListener
 	{
+		TabLayout tabLayout;
+		ViewPager viewPager;
+
 		BottomNavigationView bottomNavigationView;
 
 		protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
@@ -27,7 +31,9 @@ namespace AndroidTabbedRenderer.Droid
 
 			if (bottomNavigationView == null)
 			{
-				HideTabLayout();
+				FindViews();
+
+				tabLayout.Visibility = ViewStates.Gone;
 
 				bottomNavigationView = new BottomNavigationView(this.Context);
 				bottomNavigationView.SetBackgroundResource(Resource.Color.indigo);
@@ -36,21 +42,17 @@ namespace AndroidTabbedRenderer.Droid
 				bottomNavigationView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
 				AddView(bottomNavigationView);
 
-				bottomNavigationView.InflateMenu(Resource.Menu.main_menu);
-			}
-
-			if (e.OldElement != null)
-			{
-				var page = e.OldElement as BottomTabbedPage;
-				((IPageController)page).InternalChildren.CollectionChanged -= OnChildrenCollectionChanged;
+				bottomNavigationView.SetOnNavigationItemSelectedListener(this);
 			}
 
 			if (e.NewElement != null)
 			{
 				var page = e.NewElement as BottomTabbedPage;
-				((IPageController)page).InternalChildren.CollectionChanged += OnChildrenCollectionChanged;
 
-				OnChildrenCollectionChanged(null, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+				if (page.AndroidMenu == BottomMenu.Photos)
+				{
+					bottomNavigationView.InflateMenu(Resource.Menu.photos_menu);
+				}
 			}
 		}
 
@@ -74,21 +76,33 @@ namespace AndroidTabbedRenderer.Droid
 			return size + (int)mode;
 		}
 
-		private void HideTabLayout()
+		private void FindViews()
 		{
 			for (int i = 0; i < ViewGroup.ChildCount; i++)
 			{
 				var child = ViewGroup.GetChildAt(i);
-				var tabLayout = child as TabLayout;
-				if (tabLayout != null)
-				{
-					tabLayout.Visibility = ViewStates.Gone;
-				}
+
+				var asTabLayout = child as TabLayout;
+				if (asTabLayout != null)
+					this.tabLayout = asTabLayout;
+
+				var asViewPager = child as ViewPager;
+				if (asViewPager != null)
+					this.viewPager = asViewPager;
 			}
 		}
 
-		void OnChildrenCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+		public bool OnNavigationItemSelected(IMenuItem item)
 		{
+			var index = item.Order;
+
+			if (index < viewPager.Adapter.Count)
+			{
+				viewPager.CurrentItem = index;
+				return true;
+			}
+
+			return false;
 		}
 	}
 }

@@ -60,6 +60,7 @@
       <DependentUpon>ShitPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="BottomTabbedPage.cs" />
+    <Compile Include="BottomMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

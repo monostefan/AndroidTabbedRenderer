@@ -133,8 +133,10 @@
     <AndroidResource Include="Resources\drawable\ic_access_time_white_24dp.xml" />
     <AndroidResource Include="Resources\drawable\ic_audiotrack_white_24dp.xml" />
     <AndroidResource Include="Resources\drawable\ic_favorite_white_24dp.xml" />
-    <AndroidResource Include="Resources\menu\main_menu.xml" />
+    <AndroidResource Include="Resources\menu\photos_menu.xml" />
     <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\menu\files_menu.xml" />
+    <AndroidResource Include="Resources\menu\trash_menu.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />

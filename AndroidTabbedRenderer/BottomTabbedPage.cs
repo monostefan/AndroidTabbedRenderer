@@ -6,7 +6,7 @@ namespace AndroidTabbedRenderer
 {
 	public class BottomTabbedPage : TabbedPage
 	{
-		
+		public BottomMenu AndroidMenu { get; set; }
 	}
 }
 
