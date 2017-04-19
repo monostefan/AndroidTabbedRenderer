@@ -17,6 +17,8 @@ namespace AndroidTabbedRenderer
             this.parentPage = emTabs;
 
             this.Content = GetPageContent();
+
+            this.Icon = "TabbarAlbums.png";
         }
 
         private ContentView GetPageContent()

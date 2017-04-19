@@ -119,6 +119,33 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="BottomTabbedPageRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TabbarAlbums.png" />
+    <BundleResource Include="Resources\TabbarAlbums%402x.png" />
+    <BundleResource Include="Resources\TabbarAlbums%403x.png" />
+    <BundleResource Include="Resources\TabbarAlbumsActive.png" />
+    <BundleResource Include="Resources\TabbarAlbumsActive%402x.png" />
+    <BundleResource Include="Resources\TabbarAlbumsActive%403x.png" />
+    <BundleResource Include="Resources\TabbarFiles.png" />
+    <BundleResource Include="Resources\TabbarFiles%402x.png" />
+    <BundleResource Include="Resources\TabbarFiles%403x.png" />
+    <BundleResource Include="Resources\TabbarFilesActive.png" />
+    <BundleResource Include="Resources\TabbarFilesActive%402x.png" />
+    <BundleResource Include="Resources\TabbarFilesActive%403x.png" />
+    <BundleResource Include="Resources\TabbarPhotos.png" />
+    <BundleResource Include="Resources\TabbarPhotos%402x.png" />
+    <BundleResource Include="Resources\TabbarPhotos%403x.png" />
+    <BundleResource Include="Resources\TabbarPhotosActive.png" />
+    <BundleResource Include="Resources\TabbarPhotosActive%402x.png" />
+    <BundleResource Include="Resources\TabbarPhotosActive%403x.png" />
+    <BundleResource Include="Resources\TabbarShare.png" />
+    <BundleResource Include="Resources\TabbarShare%402x.png" />
+    <BundleResource Include="Resources\TabbarShare%403x.png" />
+    <BundleResource Include="Resources\TabbarShareActive.png" />
+    <BundleResource Include="Resources\TabbarShareActive%402x.png" />
+    <BundleResource Include="Resources\TabbarShareActive%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
