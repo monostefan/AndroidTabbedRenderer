@@ -180,8 +180,6 @@ namespace AndroidTabbedRenderer.Droid
 
         public void SlideUp()
         {
-
-
             var currentY = BottomNavigationView.TranslationY;
 
             if (currentY == 0 || slidingUp)
@@ -201,8 +199,6 @@ namespace AndroidTabbedRenderer.Droid
 
         public void SlideDown()
         {
-            //bottomNavigationView.Animate().Cancel();
-
             var navigationBarHeight = BottomNavigationView.Height;
             var currentY = BottomNavigationView.TranslationY;
             var currentX = BottomNavigationView.TranslationX;
@@ -211,7 +207,6 @@ namespace AndroidTabbedRenderer.Droid
                 return;
 
             bottomNavigationView.Animate().Cancel();
-
 
             SlidingDown = true;
 
@@ -253,6 +248,7 @@ namespace AndroidTabbedRenderer.Droid
         {
             if (renderer.SlidingUp)
                 renderer.SlidingUp = false;
+            
             if (renderer.SlidingDown)
                 renderer.SlidingDown = false;
         }
