@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-    public partial class ThisPage : ContentPage
+    public partial class SharesPage : ContentPage
     {
-        public ThisPage()
+        public SharesPage()
         {
             InitializeComponent();
-            Title = "This";
-            this.Icon = "TabbarPhotos.png";
+            Title = "Shares";
+            this.Icon = "TabbarShare.png";
         }
     }
 }

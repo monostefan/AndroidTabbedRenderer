@@ -1,4 +1,4 @@
-﻿using Xamarin.Forms;
+using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
@@ -8,7 +8,7 @@ namespace AndroidTabbedRenderer
 		{
 			InitializeComponent();
 
-			MainPage = new EmTabs();
+			MainPage = new ExampleTabs();
 		}
 
 		protected override void OnStart()

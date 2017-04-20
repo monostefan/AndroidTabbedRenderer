@@ -29,16 +29,16 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="EmTabs.xaml">
+    <EmbeddedResource Include="Pages\AlbumsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="FuckPage.xaml">
+    <EmbeddedResource Include="Pages\ChroniclePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThisPage.xaml">
+    <EmbeddedResource Include="Pages\SharesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShitPage.xaml">
+    <EmbeddedResource Include="Pages\ExampleTabs.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -47,21 +47,21 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EmTabs.xaml.cs">
-      <DependentUpon>EmTabs.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FuckPage.xaml.cs">
-      <DependentUpon>FuckPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ThisPage.xaml.cs">
-      <DependentUpon>ThisPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ShitPage.xaml.cs">
-      <DependentUpon>ShitPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="BottomTabbedPage.cs" />
     <Compile Include="BottomMenu.cs" />
     <Compile Include="IBottomTabbedPageRenderer.cs" />
+    <Compile Include="Pages\AlbumsPage.xaml.cs">
+      <DependentUpon>AlbumsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChroniclePage.xaml.cs">
+      <DependentUpon>ChroniclePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SharesPage.xaml.cs">
+      <DependentUpon>SharesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExampleTabs.xaml.cs">
+      <DependentUpon>ExampleTabs.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -76,6 +76,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

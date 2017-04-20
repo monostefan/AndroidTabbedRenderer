@@ -5,13 +5,13 @@ using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-    public partial class ShitPage : ContentPage
+    public partial class ChroniclePage : ContentPage
     {
-        public ShitPage()
+        public ChroniclePage()
         {
             InitializeComponent();
-            Title = "Shit";
-            this.Icon = "TabbarShare.png";
+            Title = "Chronicle";
+            this.Icon = "TabbarPhotos.png";
         }
     }
 }

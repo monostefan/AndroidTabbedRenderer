@@ -5,14 +5,14 @@ using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-    public partial class FuckPage : ContentPage
+    public partial class AlbumsPage : ContentPage
     {
         BottomTabbedPage parentPage;
 
-        public FuckPage(EmTabs emTabs)
+        public AlbumsPage(ExampleTabs emTabs)
         {
             InitializeComponent();
-            Title = "Fuck";
+            Title = "Albums";
 
             this.parentPage = emTabs;
 

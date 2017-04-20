@@ -3,7 +3,7 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	BackgroundColor="Blue"
-	x:Class="AndroidTabbedRenderer.ShitPage">
+	x:Class="AndroidTabbedRenderer.SharesPage">
 	<ContentPage.Content>
 	</ContentPage.Content>
 </ContentPage>

@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 
 namespace AndroidTabbedRenderer
 {
-	public partial class EmTabs : BottomTabbedPage
+	public partial class ExampleTabs : BottomTabbedPage
 	{
-		public EmTabs()
+		public ExampleTabs()
 		{
 			this.AndroidMenu = BottomMenu.Photos;
 
@@ -14,9 +14,9 @@ namespace AndroidTabbedRenderer
 
 			On<Android>().DisableSwipePaging();
 
-			Children.Add(new FuckPage(this));
-			Children.Add(new ThisPage());
-			Children.Add(new ShitPage());
+			Children.Add(new ChroniclePage());
+			Children.Add(new AlbumsPage(this));
+			Children.Add(new SharesPage());
 		}
 
 	}
