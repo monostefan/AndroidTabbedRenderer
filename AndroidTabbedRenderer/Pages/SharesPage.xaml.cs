@@ -9,6 +9,8 @@ namespace AndroidTabbedRenderer
     {
         public SharesPage()
         {
+			NavigationPage.SetHasNavigationBar(this, false);
+
             InitializeComponent();
             Title = "Shares";
             this.Icon = "TabbarShare.png";
