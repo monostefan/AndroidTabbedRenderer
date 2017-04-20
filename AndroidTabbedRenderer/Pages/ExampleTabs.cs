@@ -17,7 +17,7 @@ namespace AndroidTabbedRenderer
 			Children.Add(new ChroniclePage());
 			Children.Add(new AlbumsPage());
 
-			var page = new HuiPage(new SharesPage(), "Share", "TabbarShare.png");
+            var page = new TabNavigationPage(new SharesPage(), "Share", "TabbarShare.png");
 
 			Children.Add(page);
 
