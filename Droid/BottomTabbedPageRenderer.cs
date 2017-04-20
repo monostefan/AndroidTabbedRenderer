@@ -15,6 +15,7 @@ using Color = Android.Graphics.Color;
 using Android.Support.V7.View.Menu;
 using Java.Util.Logging;
 using Android.Animation;
+using Android.Views.Animations;
 
 [assembly: ExportRenderer(typeof(BottomTabbedPage), typeof(BottomTabbedPageRenderer))]
 namespace AndroidTabbedRenderer.Droid
@@ -26,24 +27,66 @@ namespace AndroidTabbedRenderer.Droid
 
         BottomNavigationView bottomNavigationView;
 
+        private bool slidingUp;
+        private bool slidingDown;
+
+        public bool SlidingDown
+        {
+            get
+            {
+                return slidingDown;
+            }
+
+            set
+            {
+                slidingDown = value;
+            }
+        }
+
+        public bool SlidingUp
+        {
+            get
+            {
+                return slidingUp;
+            }
+
+            set
+            {
+                slidingUp = value;
+            }
+        }
+
+        public BottomNavigationView BottomNavigationView
+        {
+            get
+            {
+                return bottomNavigationView;
+            }
+
+            private set
+            {
+                bottomNavigationView = value;
+            }
+        }
+
         protected override void OnElementChanged(ElementChangedEventArgs<TabbedPage> e)
         {
             base.OnElementChanged(e);
 
-            if (bottomNavigationView == null)
+            if (BottomNavigationView == null)
             {
                 FindViews();
 
                 tabLayout.Visibility = ViewStates.Gone;
 
-                bottomNavigationView = new BottomNavigationView(this.Context);
-                bottomNavigationView.SetBackgroundResource(Resource.Color.indigo);
-                bottomNavigationView.ItemIconTintList = ColorStateList.ValueOf(Color.White);
-                bottomNavigationView.ItemTextColor = ColorStateList.ValueOf(Color.White);
-                bottomNavigationView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
-                AddView(bottomNavigationView);
+                BottomNavigationView = new BottomNavigationView(this.Context);
+                BottomNavigationView.SetBackgroundResource(Resource.Color.indigo);
+                BottomNavigationView.ItemIconTintList = ColorStateList.ValueOf(Color.White);
+                BottomNavigationView.ItemTextColor = ColorStateList.ValueOf(Color.White);
+                BottomNavigationView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
+                AddView(BottomNavigationView);
 
-                bottomNavigationView.SetOnNavigationItemSelectedListener(this);
+                BottomNavigationView.SetOnNavigationItemSelectedListener(this);
             }
 
             if (e.OldElement != null)
@@ -63,15 +106,15 @@ namespace AndroidTabbedRenderer.Droid
 
                 if (page.AndroidMenu == BottomMenu.Photos)
                 {
-                    bottomNavigationView.InflateMenu(Resource.Menu.photos_menu);
+                    BottomNavigationView.InflateMenu(Resource.Menu.photos_menu);
                 }
                 else if (page.AndroidMenu == BottomMenu.Files)
                 {
-                    bottomNavigationView.InflateMenu(Resource.Menu.files_menu);
+                    BottomNavigationView.InflateMenu(Resource.Menu.files_menu);
                 }
                 else if (page.AndroidMenu == BottomMenu.Trash)
                 {
-                    bottomNavigationView.InflateMenu(Resource.Menu.trash_menu);
+                    BottomNavigationView.InflateMenu(Resource.Menu.trash_menu);
                 }
             }
         }
@@ -83,12 +126,12 @@ namespace AndroidTabbedRenderer.Droid
             int width = r - l;
             int height = b - t;
 
-            bottomNavigationView.Measure(MakeMeasureSpec(width, MeasureSpecMode.Exactly), MakeMeasureSpec(height, MeasureSpecMode.AtMost));
+            BottomNavigationView.Measure(MakeMeasureSpec(width, MeasureSpecMode.Exactly), MakeMeasureSpec(height, MeasureSpecMode.AtMost));
 
-            var viewHeight = Math.Min(height, Math.Max(bottomNavigationView.MeasuredHeight, bottomNavigationView.MinimumHeight));
+            var viewHeight = Math.Min(height, Math.Max(BottomNavigationView.MeasuredHeight, BottomNavigationView.MinimumHeight));
             var viewY = height - viewHeight;
 
-            bottomNavigationView.Layout(0, viewY, width, height);
+            BottomNavigationView.Layout(0, viewY, width, height);
         }
 
         public static int MakeMeasureSpec(int size, MeasureSpecMode mode)
@@ -127,37 +170,91 @@ namespace AndroidTabbedRenderer.Droid
 
         public void Hide()
         {
-            bottomNavigationView.Visibility = ViewStates.Invisible;
+            BottomNavigationView.Visibility = ViewStates.Invisible;
         }
 
         public void Show()
         {
-            bottomNavigationView.Visibility = ViewStates.Visible;
+            BottomNavigationView.Visibility = ViewStates.Visible;
         }
 
         public void SlideUp()
         {
-            var navigationBarHeight = bottomNavigationView.Height;
-            var currentY = bottomNavigationView.TranslationY;
 
-            if (currentY == 0)
+
+            var currentY = BottomNavigationView.TranslationY;
+
+            if (currentY == 0 || slidingUp)
                 return;
 
-            var currentHandleAnimator = (ObjectAnimator)ObjectAnimator.OfFloat(bottomNavigationView, "translationY", navigationBarHeight, 0f).SetDuration(200);
-            currentHandleAnimator.Start();
+            bottomNavigationView.Animate().Cancel();
 
+            SlidingUp = true;
+
+            bottomNavigationView
+                .Animate()
+                .TranslationY(0)
+                .SetDuration(1000)
+                .SetListener(new BottomTabAnimationListener(this))
+                .Start();
         }
 
         public void SlideDown()
         {
-            var navigationBarHeight = bottomNavigationView.Height;
-            var currentY = bottomNavigationView.TranslationY;
+            //bottomNavigationView.Animate().Cancel();
 
-            if (currentY == navigationBarHeight)
+            var navigationBarHeight = BottomNavigationView.Height;
+            var currentY = BottomNavigationView.TranslationY;
+            var currentX = BottomNavigationView.TranslationX;
+
+            if (currentY == navigationBarHeight || slidingDown)
                 return;
 
-            var currentHandleAnimator = (ObjectAnimator)ObjectAnimator.OfFloat(bottomNavigationView, "translationY", 0f, navigationBarHeight).SetDuration(200);
-            currentHandleAnimator.Start();
+            bottomNavigationView.Animate().Cancel();
+
+
+            SlidingDown = true;
+
+            bottomNavigationView
+                .Animate()
+                .TranslationY(navigationBarHeight)
+                .SetDuration(1000)
+                .SetListener(new BottomTabAnimationListener(this))
+                .Start();
+        }
+    }
+    class BottomTabAnimationListener : Java.Lang.Object, Animator.IAnimatorListener
+    {
+        BottomTabbedPageRenderer renderer;
+
+        public BottomTabAnimationListener(BottomTabbedPageRenderer renderer)
+        {
+            this.renderer = renderer;
+        }
+        public void OnAnimationCancel(Animator animation)
+        {
+            UpdateFlags();
+        }
+
+        public void OnAnimationEnd(Animator animation)
+        {
+            UpdateFlags();
+        }
+
+        public void OnAnimationRepeat(Animator animation)
+        {
+        }
+
+        public void OnAnimationStart(Animator animation)
+        {
+        }
+
+        private void UpdateFlags()
+        {
+            if (renderer.SlidingUp)
+                renderer.SlidingUp = false;
+            if (renderer.SlidingDown)
+                renderer.SlidingDown = false;
         }
     }
 }
