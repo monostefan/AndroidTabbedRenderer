@@ -80,9 +80,7 @@ namespace AndroidTabbedRenderer.Droid
                 tabLayout.Visibility = ViewStates.Gone;
 
                 BottomNavigationView = new BottomNavigationView(this.Context);
-                BottomNavigationView.SetBackgroundResource(Resource.Color.indigo);
-                BottomNavigationView.ItemIconTintList = ColorStateList.ValueOf(Color.White);
-                BottomNavigationView.ItemTextColor = ColorStateList.ValueOf(Color.White);
+                BottomNavigationView.SetBackgroundColor(Color.White);
                 BottomNavigationView.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.WrapContent);
                 AddView(BottomNavigationView);
 
