@@ -137,10 +137,36 @@
     <AndroidResource Include="Resources\values\colors.xml" />
     <AndroidResource Include="Resources\menu\files_menu.xml" />
     <AndroidResource Include="Resources\menu\trash_menu.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarAlbums.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarAlbumsActive.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarFiles.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarFilesActive.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarPhotos.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarPhotosActive.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarShare.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\TabbarShareActive.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarAlbums.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarAlbumsActive.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarFiles.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarFilesActive.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarPhotos.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarPhotosActive.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarShare.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\TabbarShareActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarAlbums.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarAlbumsActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarFiles.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarFilesActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarPhotos.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarPhotosActive.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarShare.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\TabbarShareActive.png" />
+    <AndroidResource Include="Resources\values-de\strings.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
     <Folder Include="Assets\" />
+    <Folder Include="Resources\values-de\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

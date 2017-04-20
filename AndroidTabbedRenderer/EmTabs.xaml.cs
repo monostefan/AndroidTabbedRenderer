@@ -14,7 +14,7 @@ namespace AndroidTabbedRenderer
 
 			On<Android>().DisableSwipePaging();
 
-			Children.Add(new FuckPage());
+			Children.Add(new FuckPage(this));
 			Children.Add(new ThisPage());
 			Children.Add(new ShitPage());
 		}
