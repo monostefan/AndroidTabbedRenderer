@@ -5,5 +5,12 @@
 	BackgroundColor="Blue"
 	x:Class="AndroidTabbedRenderer.SharesPage">
 	<ContentPage.Content>
+		<Grid>
+			<Button
+				Text="Open Subpage"
+				VerticalOptions="Center"
+				HorizontalOptions="Center"
+				Clicked="OnOpenSubpage" />
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

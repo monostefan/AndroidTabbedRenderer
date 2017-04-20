@@ -13,5 +13,10 @@ namespace AndroidTabbedRenderer
             Title = "Shares";
             this.Icon = "TabbarShare.png";
         }
-    }
+
+		void OnOpenSubpage(object sender, EventArgs e)
+		{
+			Navigation.PushAsync(new SubPage());
+		}
+	}
 }

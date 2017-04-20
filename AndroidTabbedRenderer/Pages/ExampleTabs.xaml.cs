@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
@@ -16,7 +17,7 @@ namespace AndroidTabbedRenderer
 
 			Children.Add(new ChroniclePage());
 			Children.Add(new AlbumsPage(this));
-			Children.Add(new SharesPage());
+			Children.Add(new NavigationPage(new SharesPage()));
 		}
 
 	}

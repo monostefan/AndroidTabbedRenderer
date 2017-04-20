@@ -62,6 +62,7 @@
     <Compile Include="Pages\ExampleTabs.xaml.cs">
       <DependentUpon>ExampleTabs.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SubPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
