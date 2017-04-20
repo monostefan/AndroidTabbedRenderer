@@ -190,7 +190,7 @@ namespace AndroidTabbedRenderer.Droid
             bottomNavigationView
                 .Animate()
                 .TranslationY(0)
-                .SetDuration(1000)
+                .SetDuration(250)
                 .SetListener(new BottomTabAnimationListener(this))
                 .Start();
         }
@@ -211,7 +211,7 @@ namespace AndroidTabbedRenderer.Droid
             bottomNavigationView
                 .Animate()
                 .TranslationY(navigationBarHeight)
-                .SetDuration(1000)
+                .SetDuration(250)
                 .SetListener(new BottomTabAnimationListener(this))
                 .Start();
         }

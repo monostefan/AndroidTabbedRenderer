@@ -60,6 +60,7 @@
     <Compile Include="TabBarController.cs" />
     <Compile Include="BasePage.cs" />
     <Compile Include="Pages\ExampleTabs.cs" />
+    <Compile Include="TabNavigationPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
