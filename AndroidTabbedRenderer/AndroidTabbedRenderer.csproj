@@ -63,6 +63,8 @@
       <DependentUpon>ExampleTabs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SubPage.cs" />
+    <Compile Include="TabBarController.cs" />
+    <Compile Include="BasePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

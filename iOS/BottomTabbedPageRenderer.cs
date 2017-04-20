@@ -30,7 +30,7 @@ namespace TabbedPageImplementation.iOS
                 var tabbedPage = e.OldElement as BottomTabbedPage;
                 if (tabbedPage != null)
                 {
-                    tabbedPage.renderer = null;
+                    tabbedPage.Renderer = null;
                 }
             }
 
@@ -39,7 +39,7 @@ namespace TabbedPageImplementation.iOS
                 var tabbedPage = e.NewElement as BottomTabbedPage;
                 if (tabbedPage != null)
                 {
-                    tabbedPage.renderer = this;
+                    tabbedPage.Renderer = this;
 
                     tabBarHeight = TabBar.Frame.Height;
 

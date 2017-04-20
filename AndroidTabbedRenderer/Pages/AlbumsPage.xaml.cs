@@ -5,16 +5,12 @@ using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-    public partial class AlbumsPage : ContentPage
+	public partial class AlbumsPage : BasePage
     {
-        BottomTabbedPage parentPage;
-
-        public AlbumsPage(ExampleTabs emTabs)
+        public AlbumsPage()
         {
             InitializeComponent();
             Title = "Albums";
-
-            this.parentPage = emTabs;
 
             this.Content = GetPageContent();
 
@@ -30,7 +26,7 @@ namespace AndroidTabbedRenderer
             {
                 Text = "Hide"
             };
-            hideButton.Clicked += parentPage.Hide;
+			hideButton.Clicked += (s,e) => TabBar.Hide();
 
 
             var showButton = new Button
@@ -38,7 +34,7 @@ namespace AndroidTabbedRenderer
                 Text = "Show"
             };
 
-            showButton.Clicked += parentPage.Show;
+			showButton.Clicked += (s,e) => TabBar.Show();
 
 
             var slideUpButton = new Button
@@ -46,7 +42,7 @@ namespace AndroidTabbedRenderer
                 Text = "SlideUp"
             };
 
-            slideUpButton.Clicked += parentPage.SlideUp;
+			slideUpButton.Clicked += (s,e) => TabBar.SlideUp();
 
 
 
@@ -56,7 +52,7 @@ namespace AndroidTabbedRenderer
             };
 
 
-            slideDownButton.Clicked += parentPage.SlideDown;
+			slideDownButton.Clicked += (s,e) => TabBar.SlideDown();
 
             stack.Children.Add(hideButton);
             stack.Children.Add(showButton);

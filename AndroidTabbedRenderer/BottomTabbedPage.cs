@@ -4,31 +4,52 @@ using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-    public class BottomTabbedPage : TabbedPage
-    {
-        public IBottomTabbedPageRenderer renderer;
+	public class BottomTabbedPage : TabbedPage
+	{
+		public IBottomTabbedPageRenderer Renderer { get; set; }
 
-        public BottomMenu AndroidMenu { get; set; }
+		public BottomMenu AndroidMenu { get; set; }
 
-        public void Hide(object sender, EventArgs e)
-        {
-            renderer?.Hide();
-        }
+		public BottomTabbedPage()
+		{
+			Init();
+		}
 
-        public void Show(object sender, EventArgs e)
-        {
-            renderer?.Show();
-        }
+		public void Init()
+		{
+			MessagingCenter.Subscribe<TabBarController>(this, "HideTabbar", Hide);
+			MessagingCenter.Subscribe<TabBarController>(this, "ShowTabbar", Show);
+			MessagingCenter.Subscribe<TabBarController>(this, "SlideDownTabbar", SlideDown);
+			MessagingCenter.Subscribe<TabBarController>(this, "SlideUpTabbar", SlideUp);
+		}
 
-        public void SlideUp(object sender, EventArgs e)
-        {
-            renderer?.SlideUp();
-        }
+		~BottomTabbedPage()
+		{
+			MessagingCenter.Unsubscribe<TabBarController>(this, "HideTabbar");
+			MessagingCenter.Unsubscribe<TabBarController>(this, "ShowTabbar");
+			MessagingCenter.Unsubscribe<TabBarController>(this, "SlideDownTabbar");
+			MessagingCenter.Unsubscribe<TabBarController>(this, "SlideUpTabbar");
+		}
 
-        public void SlideDown(object sender, EventArgs e)
-        {
-            renderer?.SlideDown();
-        }
-    }
+		public void Hide(object sender)
+		{
+			Renderer?.Hide();
+		}
+
+		public void Show(object sender)
+		{
+			Renderer?.Show();
+		}
+
+		public void SlideUp(object sender)
+		{
+			Renderer?.SlideUp();
+		}
+
+		public void SlideDown(object sender)
+		{
+			Renderer?.SlideDown();
+		}
+	}
 }
 

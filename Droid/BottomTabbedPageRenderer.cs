@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Specialized;
 using Android.Support.Design.Widget;
 using Android.Views;
@@ -94,7 +94,7 @@ namespace AndroidTabbedRenderer.Droid
                 var tabbedPage = e.OldElement as BottomTabbedPage;
                 if (tabbedPage != null)
                 {
-                    tabbedPage.renderer = null;
+                    tabbedPage.Renderer = null;
                 }
             }
 
@@ -102,7 +102,7 @@ namespace AndroidTabbedRenderer.Droid
             {
                 var page = e.NewElement as BottomTabbedPage;
 
-                page.renderer = this;
+                page.Renderer = this;
 
                 if (page.AndroidMenu == BottomMenu.Photos)
                 {

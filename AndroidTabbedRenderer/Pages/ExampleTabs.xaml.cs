@@ -16,8 +16,9 @@ namespace AndroidTabbedRenderer
 			On<Android>().DisableSwipePaging();
 
 			Children.Add(new ChroniclePage());
-			Children.Add(new AlbumsPage(this));
-			Children.Add(new NavigationPage(new SharesPage()));
+			Children.Add(new AlbumsPage());
+			Children.Add(
+				new NavigationPage(new SharesPage()));
 		}
 
 	}
