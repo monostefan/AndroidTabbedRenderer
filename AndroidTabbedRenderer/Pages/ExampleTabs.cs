@@ -1,25 +1,30 @@
-using System;
+﻿using System;
+
+using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
-using Xamarin.Forms;
 
 namespace AndroidTabbedRenderer
 {
-	public partial class ExampleTabs : BottomTabbedPage
+	public class ExampleTabs : BottomTabbedPage
 	{
 		public ExampleTabs()
 		{
 			this.AndroidMenu = BottomMenu.Photos;
 
-			InitializeComponent();
-
 			On<Android>().DisableSwipePaging();
 
 			Children.Add(new ChroniclePage());
 			Children.Add(new AlbumsPage());
-			Children.Add(
-				new NavigationPage(new SharesPage()));
+
+			var page = new NavigationPage(new SharesPage());
+			page.Title = "Shares";
+			page.Icon = "TabbarShare.png";
+			Children.Add(page);
+
+			CurrentPage = page;
 		}
 
 	}
 }
+

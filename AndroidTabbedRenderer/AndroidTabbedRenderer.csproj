@@ -38,9 +38,6 @@
     <EmbeddedResource Include="Pages\SharesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\ExampleTabs.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -59,12 +56,10 @@
     <Compile Include="Pages\SharesPage.xaml.cs">
       <DependentUpon>SharesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ExampleTabs.xaml.cs">
-      <DependentUpon>ExampleTabs.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\SubPage.cs" />
     <Compile Include="TabBarController.cs" />
     <Compile Include="BasePage.cs" />
+    <Compile Include="Pages\ExampleTabs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
