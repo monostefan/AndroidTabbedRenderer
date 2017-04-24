@@ -11,10 +11,17 @@ namespace AndroidTabbedRenderer
         {
 			NavigationPage.SetHasNavigationBar(this, false);
 
+
             InitializeComponent();
             Title = "Shares";
             this.Icon = "TabbarShare.png";
         }
+
+		protected override void OnAppearing()
+		{
+			var bla = new TabBarController();
+			bla.Hide();
+		}
 
 		void OnOpenSubpage(object sender, EventArgs e)
 		{

@@ -5,5 +5,12 @@
 	BackgroundColor="Green"
 	x:Class="AndroidTabbedRenderer.ChroniclePage">
 	<ContentPage.Content>
+		<Grid>
+			<Button
+				Text="Open Subpage"
+				VerticalOptions="End"
+				HorizontalOptions="Center"
+				Clicked="OnOpenSubpage" />
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

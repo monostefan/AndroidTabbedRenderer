@@ -8,7 +8,7 @@
 		<Grid>
 			<Button
 				Text="Open Subpage"
-				VerticalOptions="Center"
+				VerticalOptions="End"
 				HorizontalOptions="Center"
 				Clicked="OnOpenSubpage" />
 		</Grid>
