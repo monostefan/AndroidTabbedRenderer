@@ -4,7 +4,7 @@ using Xamarin.Forms.Internals;
 
 namespace AndroidTabbedRenderer
 {
-	class TabNavigationPage : NavigationPage
+	public class TabNavigationPage : NavigationPage
 	{
 		private TabBarController TabBar = new TabBarController();
 

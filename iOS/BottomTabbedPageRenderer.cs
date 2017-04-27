@@ -10,12 +10,6 @@ namespace TabbedPageImplementation.iOS
 {
     public class TabbedPageRendereriOS : TabbedRenderer, IBottomTabbedPageRenderer
     {
-        private bool tabBarHidden;
-        private bool tabBarSlidedDown;
-
-        private nfloat tabBarHeight;
-        private nfloat screenHeight;
-
         private nfloat centerX;
         private nfloat centerY;
 
@@ -41,10 +35,6 @@ namespace TabbedPageImplementation.iOS
                 {
                     tabbedPage.Renderer = this;
 
-                    tabBarHeight = TabBar.Frame.Height;
-
-                    screenHeight = this.View.Frame.Height;
-
                     centerX = TabBar.Center.X;
                     centerY = TabBar.Center.Y;
                 }
@@ -66,35 +56,29 @@ namespace TabbedPageImplementation.iOS
 
         public void Hide()
         {
-            if (tabBarHidden || tabBarSlidedDown)
+            if (TabBar.Hidden)
                 return;
 
-            tabBarHidden = true;
-
             TabBar.Hidden = true;
+            TabBar.Alpha = 0;
         }
 
         public void Show()
         {
-            if (!(tabBarHidden | tabBarSlidedDown))
+            if (!TabBar.Hidden)
                 return;
 
-            TabBar.Center = new CGPoint(centerX, centerY);
-
-            tabBarHidden = false;
-            tabBarSlidedDown = false;
             TabBar.Hidden = false;
+            TabBar.Alpha = 1;
         }
 
         public void SlideUp()
         {
-            if (tabBarHidden)
+            if (TabBar.Hidden)
                 return;
 
-            tabBarSlidedDown = false;
-
             var animationOptions = UIViewAnimationOptions.BeginFromCurrentState |
-                                             UIViewAnimationOptions.CurveEaseInOut;
+                                   UIViewAnimationOptions.CurveEaseInOut;
 
             Action noOpOnCompletion = () => { };
 
@@ -110,13 +94,11 @@ namespace TabbedPageImplementation.iOS
 
         public void SlideDown()
         {
-            if (tabBarHidden)
+            if (TabBar.Hidden)
                 return;
 
-            tabBarSlidedDown = true;
-
             var animationOptions = UIViewAnimationOptions.BeginFromCurrentState |
-                                                                     UIViewAnimationOptions.CurveEaseInOut;
+                                   UIViewAnimationOptions.CurveEaseInOut;
 
             Action noOpOnCompletion = () => { };
 

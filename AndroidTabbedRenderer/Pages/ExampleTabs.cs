@@ -3,6 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace AndroidTabbedRenderer
 {
@@ -18,6 +19,8 @@ namespace AndroidTabbedRenderer
 			Children.Add(new AlbumsPage());
 
             var page = new TabNavigationPage(new SharesPage(), "Share", "TabbarShare.png");
+
+            page.On<iOS>().EnableTranslucentNavigationBar();
 
 			Children.Add(page);
 

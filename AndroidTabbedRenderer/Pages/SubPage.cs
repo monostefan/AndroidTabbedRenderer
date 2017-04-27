@@ -6,8 +6,6 @@ namespace AndroidTabbedRenderer
 	{
 		public SubPage()
 		{
-			NavigationPage.SetHasNavigationBar(this, false);
-
 			this.Content = new Label
 			{
 				Text = "Hey, I'm a Subpage!",
